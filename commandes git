@@ -1,0 +1,8 @@
+git pull // récupérer les données que les autres ont fait
+
+
+// mettre à jour ce que tu as fait sur le projet 
+git add .
+git commit -m "J'ai ajouté le petit bouton par ex" 
+git push
+

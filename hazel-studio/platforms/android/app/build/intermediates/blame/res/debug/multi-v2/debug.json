@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "/home/jeff/Documents/4A/Mobile-Project/hazel-studio/platforms/android/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
                     "source": "/home/jeff/Documents/4A/Mobile-Project/hazel-studio/platforms/android/app/src/main/res/values/strings.xml",
+=======
+            "outputFile": "/Users/vanessanarvaez/Desktop/Mobile-Project/hazel-studio/platforms/android/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/vanessanarvaez/Desktop/Mobile-Project/hazel-studio/platforms/android/app/src/main/res/values/strings.xml",
+>>>>>>> df88bc2dda484b6b5e889d4e5911b7105744ed18
                     "from": {
                         "startLines": "4,2,3",
                         "startColumns": "4,4,4",
