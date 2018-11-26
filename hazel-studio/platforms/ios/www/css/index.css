@@ -1,24 +1,32 @@
 .navbar {
 	border: 0;
 	border-radius: 0;
-		margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .navbar li {
 	margin: 0 10px 0 10px;
 }
 
+.navbar img {
+	margin: 5px 0;
+	max-height: 40px;
+	width: auto;
+}
+
 #menu {
 	margin: 0 10px 0 10px;
+}
+
+main {
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .view {
 	margin: 50px 0;
 	background-color: #EEE;
-}
-
-.container {
-	max-width: 1000px;
 }
 
 .gallery {
@@ -33,7 +41,7 @@
 .gallery-img {
 	display: block;
 	width: auto;
-	height: 200px;
+	height: 50px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-right: auto;
@@ -41,8 +49,8 @@
 }
 
 .category {
-	line-height: 220px;
-	height: 220px;
+	line-height: 70px;
+	height: 70px;
 	text-align: center;
 }
 
@@ -84,20 +92,6 @@
 .prod-link {
 	display: block;
 }
-
-/*footer {
-	background-color: #222;
-	color: white;
-}
-
-footer li {
-	display: inline-block;
-}
-
-#logoEsiea {
-	height: 80px;
-	width: auto;
-}*/
 
 .panel-primary {
 	max-width: 1000px;

@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-    currentPage: 'home',
+    currentPage: 'login',
     logged: false,
     selectedItem: {},
     currentUser: {
@@ -60,12 +60,18 @@ var app = new Vue({
             lastname: 'Narvaez Ramirez',
             phoneNb: '+33 6 50 91 06 95',
       email: 'narvaezramirez@et.esiea.fr',
-            link: '' },
+            link: 'https://www.linkedin.com/in/vanessa-narvaez-72a751140' },
         {   firstname: 'Jean-François',
             lastname: 'Robbe',
             phoneNb: '+33 7 81 06 98 09',
       email: 'robbe@et.esiea.fr',
-            link: 'https://www.linkedin.com/in/robbe-jean-françois-3b660776'
+            link: 'https://www.linkedin.com/in/robbe-jean-françois-3b660776'},
+        {   firstname: 'Gwendal',
+            lastname: 'Papail',
+            phoneNb: '+33 6 05 02 25 17',
+      email: 'papail@et.esiea.fr',
+            link: 'https://www.linkedin.com/in/gwendal-papail-bba1a5171'
+
         }],
   },
   methods: {

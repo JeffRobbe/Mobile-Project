@@ -21,7 +21,8 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>                        
 						</button>
-						<h3 id="menu" class="navbar-brand">Menu</h3>
+						<!--h3 id="menu" class="navbar-brand">Menu</h3-->
+            <img src="img/logoHazel.png" alt="Hazel Clothes"/>
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
@@ -60,10 +61,10 @@
 			<main class="view" v-if="currentPage=='home'">
 				<div class="container" v-for="category in categories">
 					<div class="row gallery">
-						<div class="col-sm-3 category">
+						<div class="col-3 category">
 							<h2>{{category.name}}</h2>
 						</div>
-						<div class="col-sm-3 prods" v-for="product in category.products">
+						<div class="col-3 prods" v-for="product in category.products">
               <a class="prod-link" v-on:click="currentPage='product'; selectedItem=product">
                 <img class="gallery-img" :src="product.img" :alt="product.name">
                 <div class="overlay">
