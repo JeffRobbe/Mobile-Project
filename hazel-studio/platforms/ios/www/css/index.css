@@ -25,7 +25,7 @@ main {
 }
 
 .view {
-	margin: 50px 0;
+	margin: 50px 100px 0 0;
 	background-color: #EEE;
 }
 
@@ -231,4 +231,10 @@ main {
 	margin-top: 15px;
 	font-size: 16px;
 	color: white;
+}
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
