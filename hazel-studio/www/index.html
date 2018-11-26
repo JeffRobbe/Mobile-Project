@@ -21,7 +21,8 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>                        
 						</button>
-						<h3 id="menu" class="navbar-brand">Menu</h3>
+						<!--h3 id="menu" class="navbar-brand">Menu</h3-->
+            <img src="img/logoHazel.png" alt="Hazel Clothes"/>
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
@@ -60,10 +61,10 @@
 			<main class="view" v-if="currentPage=='home'">
 				<div class="container" v-for="category in categories">
 					<div class="row gallery">
-						<div class="col-sm-3 category">
+						<div class="col-3 category">
 							<h2>{{category.name}}</h2>
 						</div>
-						<div class="col-sm-3 prods" v-for="product in category.products">
+						<div class="col-3 prods" v-for="product in category.products">
               <a class="prod-link" v-on:click="currentPage='product'; selectedItem=product">
                 <img class="gallery-img" :src="product.img" :alt="product.name">
                 <div class="overlay">
@@ -164,26 +165,28 @@
 				</div>
 			</main>
       
-			<!--footer class="container-fluid text-center">
-        <ul>
-          <li><img id="logoEsiea" src="img/esiea.png" alt="Logo ESIEA"></li>
-          <li>
-            <h4>Designed by</h4>
-            <div class="row">
-              <div class="col-sm-6" v-for="author in authors">
-                <h5>{{author.firstname}} {{author.lastname}}</h5>
-                <p>{{author.phoneNb}}</p>
-                <a :href="author.link">LinkedIn Profile</a>
+      <main class="view" v-if="currentPage=='info'">
+        <div class="container">
+          <ul>
+            <li><img id="logoEsiea" src="img/esiea.png" alt="Logo ESIEA"></li>
+            <li>
+              <h4>Designed by</h4>
+              <div class="row">
+                <div class="col-sm-6" v-for="author in authors">
+                  <h5>{{author.firstname}} {{author.lastname}}</h5>
+                  <p>{{author.phoneNb}}</p>
+                  <a :href="author.link">LinkedIn Profile</a>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
-			</footer-->
+            </li>
+          </ul>
+        </div>
+      </main>
 
 			<nav class="navbar navbar-inverse navbar-fixed-bottom">
-    		<a href="#"><i class="glyphicon glyphicon-info-sign"></i></a>
-    		<a href="#"><i class="glyphicon glyphicon-home"></i></a>
-    		<a href="#"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+    		<a v-on:click="currentPage='info'"><i class="glyphicon glyphicon-info-sign"></i></a>
+    		<a v-on:click="currentPage='home'"><i class="glyphicon glyphicon-home"></i></a>
+    		<a v-on:click="currentPage='cart'"><i class="glyphicon glyphicon-shopping-cart"></i></a>
     	</nav>
       
     </div>

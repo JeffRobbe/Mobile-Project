@@ -80,7 +80,7 @@ var app = new Vue({
       for(var i=0;i<this.cart.length;i++) {
         total=total+parseFloat(this.cart[i].price);
       }
-      return total;
+      return total.toFixed(2);
     }
   }
 });

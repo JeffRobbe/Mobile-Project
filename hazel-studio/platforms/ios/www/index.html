@@ -164,26 +164,28 @@
 				</div>
 			</main>
       
-			<!--footer class="container-fluid text-center">
-        <ul>
-          <li><img id="logoEsiea" src="img/esiea.png" alt="Logo ESIEA"></li>
-          <li>
-            <h4>Designed by</h4>
-            <div class="row">
-              <div class="col-sm-6" v-for="author in authors">
-                <h5>{{author.firstname}} {{author.lastname}}</h5>
-                <p>{{author.phoneNb}}</p>
-                <a :href="author.link">LinkedIn Profile</a>
+      <main class="view" v-if="currentPage=='info'">
+        <div class="container">
+          <ul>
+            <li><img id="logoEsiea" src="img/esiea.png" alt="Logo ESIEA"></li>
+            <li>
+              <h4>Designed by</h4>
+              <div class="row">
+                <div class="col-sm-6" v-for="author in authors">
+                  <h5>{{author.firstname}} {{author.lastname}}</h5>
+                  <p>{{author.phoneNb}}</p>
+                  <a :href="author.link">LinkedIn Profile</a>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
-			</footer-->
+            </li>
+          </ul>
+        </div>
+      </main>
 
 			<nav class="navbar navbar-inverse navbar-fixed-bottom">
-    		<a href="#"><i class="glyphicon glyphicon-info-sign"></i></a>
-    		<a href="#"><i class="glyphicon glyphicon-home"></i></a>
-    		<a href="#"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+    		<a v-on:click="currentPage='info'"><i class="glyphicon glyphicon-info-sign"></i></a>
+    		<a v-on:click="currentPage='home'"><i class="glyphicon glyphicon-home"></i></a>
+    		<a v-on:click="currentPage='cart'"><i class="glyphicon glyphicon-shopping-cart"></i></a>
     	</nav>
       
     </div>
