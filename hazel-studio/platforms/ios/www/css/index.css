@@ -233,8 +233,12 @@ main {
 	color: white;
 }
 
-.form-inline {  
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color : #000;
 }
