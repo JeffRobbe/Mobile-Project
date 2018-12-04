@@ -25,7 +25,7 @@ main {
 }
 
 .view {
-	margin: 50px 0;
+	margin: 50px 100px 0 0;
 	background-color: #EEE;
 }
 
@@ -231,4 +231,14 @@ main {
 	margin-top: 15px;
 	font-size: 16px;
 	color: white;
+}
+
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color : #000;
 }

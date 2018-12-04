@@ -67,9 +67,6 @@
 						<div class="col-3 prods" v-for="product in category.products">
               <a class="prod-link" v-on:click="currentPage='product'; selectedItem=product">
                 <img class="gallery-img" :src="product.img" :alt="product.name">
-                <div class="overlay">
-                  <div class="prod-name">{{product.name}}</div>
-                </div>
               </a>
 						</div>
 					</div>
@@ -130,16 +127,16 @@
           <div class="gallery text-center">
             <h3>Login</h3>
             <form>
-              <div class="form-group">
+              <div class="form-group form-inline" >
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="email" id="email" placeholder="Enter email" name="email">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-              <div class="checkbox">
+                <input type="password" id="pwd" placeholder="Enter password" name="pswd">
+                
                 <label><input type="checkbox"> Remember me</label>
+            
+                <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='home'">Submit</button>
               </div>
-              <button type="button" class="btn btn-default">Submit</button>
-                </div>
             </form>
           </div>
 				</div>
@@ -175,6 +172,7 @@
                 <div class="col-sm-6" v-for="author in authors">
                   <h5>{{author.firstname}} {{author.lastname}}</h5>
                   <p>{{author.phoneNb}}</p>
+                  <img class="img-responsive" :src="author.img">
                   <a :href="author.link">LinkedIn Profile</a>
                 </div>
               </div>
