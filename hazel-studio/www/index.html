@@ -21,7 +21,6 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>                        
 						</button>
-						<!--h3 id="menu" class="navbar-brand">Menu</h3-->
             <img src="img/logoHazel.png" alt="Hazel Clothes"/>
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
@@ -45,7 +44,7 @@
               </li>
               <li v-if="logged">
                 <a>
-                  <span class="glyphicon glyphicon-user"></span> {{currentUser.firstName}} {{currentUser.lastName}}
+                  <span class="glyphicon glyphicon-user"></span> {{currentUser.email}}
                 </a>
               </li>
 							<li v-if="!logged">
@@ -61,10 +60,10 @@
 			<main class="view" v-if="currentPage=='home'">
 				<div class="container" v-for="category in categories">
 					<div class="row gallery">
-						<div class="col-3 category">
-							<h2>{{category.name}}</h2>
+						<div class="col-xs-3 category">
+							<h5>{{category.name}}</h2>
 						</div>
-						<div class="col-3 prods" v-for="product in category.products">
+						<div class="col-xs-3 prods" v-for="product in category.products">
               <a class="prod-link" v-on:click="currentPage='product'; selectedItem=product">
                 <img class="gallery-img" :src="product.img" :alt="product.name">
               </a>
@@ -79,16 +78,16 @@
 					  <h3>Cart</h3>
             <p v-if="cart.length==0">Your cart is empty!</p>
             <div class="row" v-for="product in cart" v-else>
-              <div class="col-sm-2">
+              <div class="col-xs-2">
                 <img class="cart-img" :src="product.img" :alt="product.name">
               </div>
-              <div class="col-sm-5 cart-col">
+              <div class="col-xs-5 cart-col">
                 <p class="cart-name">{{product.name}}</p>
               </div>
-              <div class="col-sm-4 cart-col">
+              <div class="col-xs-4 cart-col">
                 <p class="cart-price">{{product.price}}</p>
               </div>
-              <div class="col-sm-1">
+              <div class="col-xs-1">
                 <button type="button" class="btn cart-rmv" v-on:click="remove(product)">
                   <span class="glyphicon glyphicon-remove"></span>
                 </button>
@@ -135,7 +134,7 @@
                 
                 <label><input type="checkbox"> Remember me</label>
             
-                <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='home'">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='home';logged=true;currentUser.email='robbe@et.esiea.fr'">Submit</button>
               </div>
             </form>
           </div>
