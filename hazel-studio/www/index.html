@@ -127,22 +127,22 @@
             <h3>Login</h3>
             <form>
               <label for="email">Email:</label>
-              <input type="email" id="email" placeholder="Enter email" name="email"></br>
+              <input type="email" placeholder="Enter email" name="email"></br>
               <label for="pwd">Password:</label>
-              <input type="password" id="pwd" placeholder="Enter password" name="pswd"></br>
+              <input type="password" placeholder="Enter password" name="pswd"></br>
               <label><input type="checkbox"> Remember me</label></br>
               <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='home';logged=true;currentUser.email='robbe@et.esiea.fr'">Submit</button></br>
             </form>
             <form>
               <h3>Sign up</h3>
               <label for="fname">First Name:</label>
-              <input type="text" id="fname" name="firstname" placeholder="First Name"></br>
+              <input type="text" name="firstname" placeholder="First Name"></br>
               <label for="lname">Last Name:</label>
-              <input type="text" id="lname" name="lastname" placeholder="Last Name"></br>
+              <input type="text" name="lastname" placeholder="Last Name"></br>
               <label for="email">Email:</label>
-              <input type="email" id="email" placeholder="Enter email" name="email"></br>
+              <input type="email" placeholder="Enter email" name="email"></br>
               <label for="pwd">Password:</label>
-              <input type="password" id="pwd" placeholder="Enter password" name="pswd"></br>
+              <input type="password" placeholder="Enter password" name="pswd"></br>
               <button id="register" type="button" class="btn btn-default"  data-toggle="modal" data-target="#myModal">Register</button>
               <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
@@ -169,7 +169,7 @@
       <main class="view" v-if="currentPage=='product'">
         <div class="container">
           <div class="col-sm-6">
-            <img class="img-responsive" :src="selectedItem.img" :alt="selectedItem.name">
+            <img class="img-responsive img-product" :src="selectedItem.img" :alt="selectedItem.name">
           </div>
           <div class="col-sm-6">
             <h2>{{selectedItem.name}}</h2>
@@ -188,20 +188,16 @@
       
       <main class="view" v-if="currentPage=='info'">
         <div class="container">
-          <ul>
-            <li><img id="logoEsiea" src="img/esiea.png" alt="Logo ESIEA"></li>
-            <li>
-              <h4>Designed by</h4>
-              <div class="row">
-                <div class="col-sm-6" v-for="author in authors">
-                  <h5>{{author.firstname}} {{author.lastname}}</h5>
-                  <p>{{author.phoneNb}}</p>
-                  <img class="img-responsive gallery-img" :src="author.img">
-                  <a :href="author.link">LinkedIn Profile</a>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <img class="img-responsive" id="logoEsiea" src="img/logo-esiea.png" alt="Logo ESIEA">
+          <h4>Designed by</h4>
+          <div class="row">
+            <div class="col-sm-6" v-for="author in authors">
+              <h5>{{author.firstname}} {{author.lastname}}</h5>
+              <p>{{author.phoneNb}}</p>
+              <img class="gallery-img" :src="author.img">
+              <a :href="author.link">LinkedIn Profile</a>
+            </div>
+          </div>
         </div>
       </main>
 

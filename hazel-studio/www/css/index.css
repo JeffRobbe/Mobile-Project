@@ -30,12 +30,14 @@ main {
 }
 
 .gallery {
+	position: relative;
 	margin: 8px 2px;
 	padding: 0;
 	border: 1px solid #222;
 	background-color: #888;
 	color: white;
 	width: 100%;
+	min-height: 30%;
 }
 
 .gallery-img {
@@ -110,7 +112,7 @@ main {
 	margin: auto;
 }
 
-.img-responsive {
+.img-product {
 	margin: 10px 0;
 	background-color: #aaa;
 	border: 1px solid black;
