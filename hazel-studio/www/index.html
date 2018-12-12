@@ -177,9 +177,9 @@
             <p class="price">{{selectedItem.price}} $</p>
             <button type="button" class="btn add" v-on:click="addToCart(selectedItem)">Add to cart</button>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Comment" name="add">
+              <input id ="mainText" type="text" class="form-control" placeholder="Comment" name="add">
               <div class="input-group-btn">
-                <button class="form-control" v-on:click="addComment()" type="submit">Add comment</button>
+                <button id = "submitBtn"class="form-control" v-on:click="submitClick()" type="submit">Add comment</button>
               </div>
             </div>
           </div>
@@ -214,6 +214,20 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 		<script src="js/index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB25dC5sLO11Nl5_yeDQc3ywwhc9QZWLSk",
+        authDomain: "test-ce82d.firebaseapp.com",
+        databaseURL: "https://test-ce82d.firebaseio.com",
+        projectId: "test-ce82d",
+        storageBucket: "test-ce82d.appspot.com",
+        messagingSenderId: "819095522603"
+      };
+      firebase.initializeApp(config);
+    </script>
     
   </body>
 </html>
