@@ -177,9 +177,9 @@
             <p class="price">{{selectedItem.price}} $</p>
             <button type="button" class="btn add" v-on:click="addToCart(selectedItem)">Add to cart</button>
             <div class="input-group">
-              <input id ="mainText" type="text" class="form-control" placeholder="Comment" name="add">
+              <textarea id ="mainText" type="text" class="form-control" placeholder="Comment" name="add"></textarea>
               <div class="input-group-btn">
-                <button id = "submitBtn"class="form-control" v-on:click="submitClick()" type="submit">Add comment</button>
+                <button id = "submitBtn" class="form-control" v-on:click="submitClick()" type="submit">Add</button>
               </div>
             </div>
           </div>
@@ -213,21 +213,29 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-		<script src="js/index.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-functions.js"></script>
 
     <script>
+
+      var firebase = require("firebase");
       // Initialize Firebase
       var config = {
-        apiKey: "AIzaSyB25dC5sLO11Nl5_yeDQc3ywwhc9QZWLSk",
-        authDomain: "test-ce82d.firebaseapp.com",
-        databaseURL: "https://test-ce82d.firebaseio.com",
-        projectId: "test-ce82d",
-        storageBucket: "test-ce82d.appspot.com",
-        messagingSenderId: "819095522603"
+        apiKey: "AIzaSyDx3SPJ2HojNvl2d7POtivvagTtqwdooDA",
+        authDomain: "app1-d9fa8.firebaseapp.com",
+        databaseURL: "https://app1-d9fa8.firebaseio.com",
+        projectId: "app1-d9fa8",
+        storageBucket: "app1-d9fa8.appspot.com",
+        messagingSenderId: "38541319483"
       };
       firebase.initializeApp(config);
+
     </script>
+    <script src="js/index.js"></script>
     
   </body>
 </html>

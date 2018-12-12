@@ -93,20 +93,19 @@ var app = new Vue({
   }
 });
 
- var config = {
-    apiKey: "AIzaSyB25dC5sLO11Nl5_yeDQc3ywwhc9QZWLSk",
-    authDomain: "test-ce82d.firebaseapp.com",
-    databaseURL: "https://test-ce82d.firebaseio.com",
-    projectId: "test-ce82d",
-    storageBucket: "test-ce82d.appspot.com",
-    messagingSenderId: "819095522603"
-  };
-  firebase.initializeApp(config);
 
   var maintText = document.getElementById("maintText");
 
   var submitBtn = document.getElementById("submitBtn");
 
   function submitClick() {
-    window.alert("Working");
+
+    //window.alert("Working");
+
+    var firebaseRef = firebase.database().ref();
+    var comments = maintText.value;
+
+    firebaseRef.push().set("comments");
+
+
   }
