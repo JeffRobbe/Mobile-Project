@@ -103,9 +103,10 @@ var app = new Vue({
     //window.alert("Working");
 
     var firebaseRef = firebase.database().ref();
-    var comments = maintText.value;
 
-    firebaseRef.push().set("comments");
+    //var comments = maintText.value;
+
+    firebaseRef.child("Text").set("comments");
 
 
   }
