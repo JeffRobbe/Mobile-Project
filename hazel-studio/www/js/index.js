@@ -1,12 +1,14 @@
 var app = new Vue({
     el: '#app',
     data: {
-        currentPage: 'login',
+        currentPage: '#login',
         logged: false,
+
         currentUser: {
             firstName: '',
             lastName: '',
             email: '' },
+        cart: [],
         categories: [{  
             name: 'Men',
             products: [{
