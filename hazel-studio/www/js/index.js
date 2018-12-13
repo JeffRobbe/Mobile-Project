@@ -94,18 +94,15 @@ var app = new Vue({
 });
 
 
-  var maintText = document.getElementById("maintText");
+var maintText = document.getElementById("maintText");
 
-  var submitBtn = document.getElementById("submitBtn");
+var submitBtn = document.getElementById("submitBtn");
 
-  function submitClick() {
-
+function submitClick() {
     //window.alert("Working");
 
     var firebaseRef = firebase.database().ref();
     var comments = maintText.value;
 
     firebaseRef.push().set("comments");
-
-
-  }
+}
