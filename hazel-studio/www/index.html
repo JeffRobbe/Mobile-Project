@@ -13,7 +13,7 @@
     
     <div id="app">
 
-			<nav class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar navbar-inverse navbar-fixed-top" v-if="logged">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -38,7 +38,7 @@
 							</div>
 						</form>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a v-on:click="currentPage='cart'">
+							<li><a v-on:click="currentPage='#cart'">
                 <span class="glyphicon glyphicon-shopping-cart"></span> Cart
                 </a>
               </li>
@@ -48,8 +48,8 @@
                 </a>
               </li>
 							<li v-if="!logged">
-                <a v-on:click="currentPage='login'">
-                  <span class="glyphicon glyphicon-log-in"></span> Login
+                <a v-on:click="currentPage='#login'">
+                  <span class="glyphicon glyphicon-log-in"></span> Log out
                 </a>
               </li>
 						</ul>
@@ -57,14 +57,14 @@
 				</div>
 			</nav>
 
-			<main class="view" v-if="currentPage=='home'">
+			<main class="view" v-if="currentPage=='#home'">
 				<div class="container" v-for="category in categories">
 					<div class="row gallery">
 						<div class="col-xs-3 category">
-							<h5>{{category.name}}</h2>
+							<h4>{{category.name}}</h4>
 						</div>
 						<div class="col-xs-3 prods" v-for="product in category.products">
-              <a class="prod-link" v-on:click="currentPage='product'; selectedItem=product">
+              <a class="prod-link" v-on:click="currentPage='#product'; selectedItem=product">
                 <img class="gallery-img" :src="product.img" :alt="product.name">
               </a>
 						</div>
@@ -72,25 +72,25 @@
 				</div>
 			</main>
       
-      <main class="view" v-if="currentPage=='cart'">
+      <main class="view" v-if="currentPage=='#cart'">
         <div class="container">
           <div class="gallery text-center">
 					  <h3>Cart</h3>
             <p v-if="cart.length==0">Your cart is empty!</p>
-            <div class="row" v-for="product in cart" v-else>
-              <div class="col-xs-2">
-                <img class="cart-img" :src="product.img" :alt="product.name">
-              </div>
-              <div class="col-xs-5 cart-col">
-                <p class="cart-name">{{product.name}}</p>
-              </div>
-              <div class="col-xs-4 cart-col">
-                <p class="cart-price">{{product.price}}</p>
-              </div>
-              <div class="col-xs-1">
-                <button type="button" class="btn cart-rmv" v-on:click="remove(product)">
-                  <span class="glyphicon glyphicon-remove"></span>
-                </button>
+            <div v-for="product in cart" v-else>
+              <p class="cart-name">{{product.name}}</p>
+              <div class="row">
+                <div class="col-xs-4">
+                  <img class="cart-img" :src="product.img" :alt="product.name">
+                </div>
+                <div class="col-xs-4 cart-col">
+                  <p class="cart-price">{{product.price}}</p>
+                </div>
+                <div class="col-xs-4">
+                  <button type="button" class="btn cart-rmv" v-on:click="remove(product)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
                     <p>Do you want to confirm your purchases?</p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='home';cart=[];">OK</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='#home';">OK</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                   </div>
                 </div>
@@ -121,7 +121,7 @@
         </div>
 			</main>
       
-      <main class="view" v-if="currentPage=='login'">
+      <main v-if="currentPage=='#login'">
         <div class="container">
           <div class="gallery text-center">
             <h3>Login</h3>
@@ -131,7 +131,7 @@
               <label for="pwd">Password:</label>
               <input type="password" placeholder="Enter password" name="pswd"></br>
               <label><input type="checkbox"> Remember me</label></br>
-              <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='home';logged=true;currentUser.email='robbe@et.esiea.fr'">Submit</button></br>
+              <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='#home';logged=true">Submit</button></br>
             </form>
             <form>
               <h3>Sign up</h3>
@@ -155,7 +155,7 @@
                       <p>Welcome you are now register !</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='home'">OK</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="currentPage='#home'">OK</button>
                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                   </div>
@@ -166,7 +166,7 @@
 				</div>
 			</main>
       
-      <main class="view" v-if="currentPage=='product'">
+      <main class="view" v-if="currentPage=='#product'">
         <div class="container">
           <div class="col-sm-6">
             <img class="img-responsive img-product" :src="selectedItem.img" :alt="selectedItem.name">
@@ -186,7 +186,7 @@
 				</div>
 			</main>
       
-      <main class="view" v-if="currentPage=='info'">
+      <main class="view" v-if="currentPage=='#info'">
         <div class="container">
           <img class="img-responsive" id="logoEsiea" src="img/logo-esiea.png" alt="Logo ESIEA">
           <h4>Designed by</h4>
@@ -201,10 +201,10 @@
         </div>
       </main>
 
-			<nav class="navbar navbar-inverse navbar-fixed-bottom">
-    		<a v-on:click="currentPage='info'"><i class="glyphicon glyphicon-info-sign"></i></a>
-    		<a v-on:click="currentPage='home'"><i class="glyphicon glyphicon-home"></i></a>
-    		<a v-on:click="currentPage='cart'"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+			<nav class="navbar navbar-inverse navbar-fixed-bottom" v-if="logged">
+    		<a v-on:click="currentPage='#info'"><i class="glyphicon glyphicon-info-sign"></i></a>
+    		<a v-on:click="currentPage='#home'"><i class="glyphicon glyphicon-home"></i></a>
+    		<a v-on:click="currentPage='#cart'"><i class="glyphicon glyphicon-shopping-cart"></i></a>
     	</nav>
       
     </div>
@@ -212,7 +212,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <!--script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
@@ -240,10 +240,14 @@
 
       firebase.initializeApp(config);
 
+<<<<<<< HEAD
        var database = firebase.database();
 
     </script>
 
+=======
+    </script-->
+>>>>>>> 3d01ceb6ba2974d271880379ba3c08a9a6b98dd0
     <script src="js/index.js"></script>
     
   </body>

@@ -1,15 +1,14 @@
 var app = new Vue({
     el: '#app',
     data: {
-    currentPage: 'login',
-    logged: false,
-    selectedItem: {},
-    currentUser: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phoneNb: '' },
-    cart: [],
+        currentPage: '#login',
+        logged: false,
+
+        currentUser: {
+            firstName: '',
+            lastName: '',
+            email: '' },
+        cart: [],
         categories: [{  
             name: 'Men',
             products: [{
@@ -75,38 +74,47 @@ var app = new Vue({
             img: 'img/robbe.jpg',
             link: 'https://www.linkedin.com/in/robbe-jean-françois-3b660776'
         }],
-  },
-  methods: {
-    addToCart: function(product) {
-      this.cart.push(product);
     },
-    remove: function(product) {
-      this.cart.splice(this.cart.indexOf(product),1);
+
+    mounted: function(){
+        console.log("mounted");
     },
-    totalCart: function() {
-      var total=0;
-      for(var i=0;i<this.cart.length;i++) {
-        total=total+parseFloat(this.cart[i].price);
-      }
-      return total.toFixed(2);
+
+    methods: {
+        addToCart: function(product) {
+          this.cart.push(product);
+        },
+        remove: function(product) {
+          this.cart.splice(this.cart.indexOf(product),1);
+        },
+        totalCart: function() {
+          var total=0;
+          for(var i=0;i<this.cart.length;i++) {
+            total=total+parseFloat(this.cart[i].price);
+          }
+          return total.toFixed(2);
+        }
     }
-  }
 });
 
 
-  var maintText = document.getElementById("maintText");
+/*var maintText = document.getElementById("maintText");
 
-  var submitBtn = document.getElementById("submitBtn");
+var submitBtn = document.getElementById("submitBtn");
 
-  function submitClick() {
-
+function submitClick() {
     //window.alert("Working");
 
     var firebaseRef = firebase.database().ref();
 
+<<<<<<< HEAD
     //var comments = maintText.value;
 
     firebaseRef.child("Text").set("comments");
 
 
   }
+=======
+    firebaseRef.push().set("comments");
+}*/
+>>>>>>> 3d01ceb6ba2974d271880379ba3c08a9a6b98dd0
